@@ -12,9 +12,11 @@ public class MeshDestroy : MonoBehaviour
     public int CutCascades;
     public float ExplodeForce;
 
+    ContactPoint contact;
+
     void Start()
     {
-
+        
     }
 
     void Update()
@@ -30,6 +32,7 @@ public class MeshDestroy : MonoBehaviour
         if (collision.gameObject.tag == "DamagingObject")
         {
             DestroyMesh();
+            contact = collision.contacts[0];
         }
     }
 
@@ -60,9 +63,7 @@ public class MeshDestroy : MonoBehaviour
                 var bounds = Parts[i].Bounds;
                 bounds.Expand(0.5f);
 
-                var plane = new Plane(UnityEngine.Random.onUnitSphere, new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x),
-                                                                                   UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
-                                                                                   UnityEngine.Random.Range(bounds.min.z, bounds.max.z)));
+                var plane = new Plane(UnityEngine.Random.onUnitSphere, contact.point);
 
 
                 SubParts.Add(GenerateMesh(Parts[i], plane, true));
