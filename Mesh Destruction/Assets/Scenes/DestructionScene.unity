@@ -227,10 +227,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Christmas_Tree_V1_00
       objectReference: {fileID: 0}
-    - target: {fileID: 105522, guid: 8044f7fc9e0fa3247bf5b7e686882aab, type: 3}
-      propertyPath: m_TagString
-      value: Destructable
-      objectReference: {fileID: 0}
     - target: {fileID: 404032, guid: 8044f7fc9e0fa3247bf5b7e686882aab, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -275,6 +271,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 929543655, guid: 8044f7fc9e0fa3247bf5b7e686882aab, type: 3}
+      propertyPath: AlternateMaterial
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8044f7fc9e0fa3247bf5b7e686882aab, type: 3}
 --- !u!1 &813753091
@@ -298,7 +298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &813753092
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -310,7 +310,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 1
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 968909650}
 --- !u!33 &813753093
@@ -11977,8 +11977,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bab29a05c79f4543af1533b2d2eac81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CutCascades: 1
+  CutCascades: 5
   ExplodeForce: 1
+  SubPartDecayTime: 0
+  AlternateMaterial: 0
+  DestorySubMeshes: 0
+  Particle: {fileID: 0}
+  NewMaterialOne: {fileID: 0}
+  NewMaterialTwo: {fileID: 0}
   contact: {x: 0, y: 0, z: 0}
 --- !u!1001 &857180309
 PrefabInstance:
@@ -12039,35 +12045,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: DamageBall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6404134560578270874, guid: d01de8929feeb1e4d8cdcc68b5330f74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d01de8929feeb1e4d8cdcc68b5330f74, type: 3}
---- !u!1 &929543654 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 105522, guid: 8044f7fc9e0fa3247bf5b7e686882aab, type: 3}
-  m_PrefabInstance: {fileID: 508731703}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &929543655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929543654}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bab29a05c79f4543af1533b2d2eac81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CutCascades: 1
-  ExplodeForce: 1
-  contact: {x: 0, y: 0, z: 0}
 --- !u!43 &968909650
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38266
+  m_Name: pb_Mesh21816
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
